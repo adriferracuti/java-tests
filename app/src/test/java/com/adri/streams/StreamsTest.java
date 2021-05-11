@@ -1,3 +1,4 @@
+
 package com.adri.streams;
 
 import org.junit.jupiter.api.Test;
@@ -33,5 +34,13 @@ public class StreamsTest {
         var fooStream = foo.stream();
         foo.add(4);
         assertEquals(List.of(1, 2, 3, 4), fooStream.collect(Collectors.toList()));
+    }
+
+    @Test
+    void listWithRemovedElementAfterStreamIsCreated() {
+        var foo = new ArrayList<>(List.of(1, 2, 3));
+        var fooStream = foo.stream();
+        foo.remove(0);
+        assertEquals(List.of(2, 3), fooStream.collect(Collectors.toList()));
     }
 }
