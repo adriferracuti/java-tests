@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.adri;
+
+option java_multiple_files = true;
+option java_outer_classname = "ProtoMyStringV3Descriptors";
+option java_package = "com.adri.proto";
+
+message ProtoMyStringV3 {
+  string foo = 1;
+}
